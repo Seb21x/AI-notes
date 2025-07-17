@@ -71,7 +71,56 @@ th {
     animation: spin 1s linear infinite;
     margin: auto;
 }
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+.notesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 20px;
+}
+
+.noteCard {
+    background-color: #E8EFF0;
+    color: black;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+}
+
+.noteCard:hover {
+    transform: scale(1.02);
+}
+
+.noteDetails {
+    display: none;
+    margin-top: 12px;
+    font-size: 0.9em;
+    color: black;
+}
+
+.noteCard.expanded .noteDetails {
+    display: block;
+}
+
+.noteCard.expanded .noteSummary {
+    display: none;
+}
+
+.form {
+    text-align: center;
+    margin: 20px;
+}
+
+#noteForm input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    margin-right: 10px;
 }

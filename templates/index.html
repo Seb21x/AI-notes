@@ -10,28 +10,21 @@
     {% if tasks|length < 1 %}
     <h4 style="text-align: center">Add your note below</h4>
     {% else %}
-    <table>
-        <tr>
-            <th>Note</th>
-            <th>Category</th>
-            <th>Summary</th>
-            <th>Date added</th>
-            <th>Actions</th>
-        </tr>
-        {% for notes in tasks %}
-            <tr>
-                <td>{{ notes.content }}</td>
-                <td>{{ notes.category }}</td>
-                <td>{{ notes.summary }}</td>
-                <td>{{ notes.date_created.date() }}</td>
-                <td>
-                    <a href="/delete/{{notes.id}}">Delete</a>
-                    <br>
-                    <a href="/edit/{{notes.id}}">Edit</a>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
+        <div class="notesGrid">
+            {% for notes in tasks %}
+                <div class="noteCard" onclick="toggleNote(this)">
+                    <strong class="noteSummary">{{ notes.content|truncate(30) }}</strong>
+                    <div class="noteDetails">
+                        <p>{{ notes.content }}</p>
+                        <p><strong>Category:</strong> {{ notes.category }}</p>
+                        <p><strong>Summary:</strong> {{ notes.summary }}</p>
+                        <p><strong>Date:</strong> {{ notes.date_created.date() }}</p>
+                        <a href="/delete/{{notes.id}}" style="color: #f88;">Delete</a> |
+                        <a href="/edit/{{notes.id}}" style="color: #8cf;">Edit</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     {% endif %}
     <div class="form">
         <form id="noteForm">
