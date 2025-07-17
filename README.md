@@ -7,9 +7,7 @@
 - [Functions](#functions)
 
 ## Description
-This is my first bigger AI related project. I aim to make this aplication stuffed with AI tools like 
-voice to text, image text recognition and many more. Plese keep in mind that this was my first bigger
-project so it may have some bugs or errors
+This is my first bigger AI related project so it may have some bugs or errors. I aim to make this aplication stuffed with AI tools :)
 
 ## HowToRun
 Run app.py, wait for program to compile, first compilation might take some time. Then go to this link: http://127.0.0.1:5000
